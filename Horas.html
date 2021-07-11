@@ -14,10 +14,14 @@
         text-align: center;
         margin: 0 center;
       }
+      #date;
+       {
+      }
     </style>
   </head>
   <body>
     <div id="horas">...</div>
+    <div id="date">..</div>
   </body>
   <script>
     function horas() {
@@ -25,11 +29,19 @@
       var hr = data.getHours()
       var min = data.getMinutes()
       var s = data.getSeconds()
+      var dia = data.getDate()
+      var mes = data.getMonth()
+      var ano = data.getFullYear()
 
       var tempo_total = hr + ':' + min + ':' + s
       var tempo = window.document.getElementById('horas')
       tempo.innerHTML = tempo_total
+
+      var date_all = dia + ':' + mes + ':' + ano
+      var date = window.document.getElementById('date')
+      date.innerHTML = date_all
     }
+    setInterval(date)
     setInterval(horas, 1000)
   </script>
 </html>
