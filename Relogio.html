@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Relógio</title>
     <style>
       #horas {
@@ -14,10 +15,19 @@
         text-align: center;
         margin: 0 center;
       }
+      #date {
+        width: px 20px;
+        background-color: aquamarine;
+        color: black;
+        font-size: 20px;
+        text-align: center;
+        margin: 0 center;
+      }
     </style>
   </head>
   <body>
     <div id="horas">....</div>
+    <div id="date">..</div>
   </body>
   <script>
     function relogio() {
@@ -26,5 +36,11 @@
       elementoID.innerHTML = horalocal
     }
     setInterval(relogio, 1000)
+    function date() {
+      let elementoID = document.getElementById('date')
+      let datelocal = new Date().toLocaleDateString('pt-br')
+      elementoID.innerHTML = datelocal
+    }
+    setInterval(date, 1000)
   </script>
 </html>
